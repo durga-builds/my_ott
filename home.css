@@ -1,0 +1,396 @@
+*{margin:0; padding:0; box-sizing:border-box;}
+body{background:#0f1014; color:white; font-family:Arial;}
+
+.hero-slider{
+  position:relative;
+  width:100%;
+  height:90vh;
+  overflow:hidden;
+  margin-left: 55px;
+}
+
+.slide{
+  position:absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  padding-left:80px;
+  opacity:0; /* First la hide da */
+}
+
+/* Background Images da */
+.s1{background-image: linear-gradient(90deg, #0f1014 25%, transparent 70%), url('https://image.tmdb.org/t/p/original/56v2KjBlU4XaOv9rVYEQypROD7P.jpg');}
+.s2{background-image: linear-gradient(90deg, #0f1014 25%, transparent 70%), url('https://image.tmdb.org/t/p/original/x2RS3uTcsJJ9IfjNPcgDmukoEcQ.jpg');}
+
+/* MAIN ANIMATION DA ITHU THAAN! */
+.s1{
+  animation: slideShow 8s infinite;
+}
+.s2{
+  animation: slideShow 8s infinite;
+  animation-delay: 4s; /* 4 sec ku aprom varum da */
+}
+
+@keyframes slideShow{
+  0% { opacity:0; transform: scale(1); }
+  10% { opacity:1; }
+  45% { opacity:1; transform: scale(1.05); } /* Zoom effect da */
+  50% { opacity:0; }
+  100% { opacity:0; }
+}
+
+.content{max-width:550px; z-index:2;}
+.content h1{font-size:55px; font-weight:900; letter-spacing:2px; animation: textUp 1s;}
+.meta{color:#aaa; margin:10px 0;}
+.desc{margin:15px 0; color:#ddd; line-height:1.5;}
+.tags{font-weight:bold; margin-bottom:20px;}
+.watch{
+  background-color: red;
+  border:none; padding:14px 40px; color:white;
+  font-size:18px; font-weight:bold; border-radius:6px; cursor:pointer;
+}
+
+.thumb-row{
+  position:absolute; bottom:30px; right:30px;
+  display:flex; gap:12px; z-index:5;
+}
+.thumb{
+  width:120px; height:68px; border-radius:6px; object-fit:cover;
+  border:2px solid transparent; opacity:0.6;
+}
+.t1{animation: thumbActive 8s infinite;}
+.t2{animation: thumbActive 8s infinite; animation-delay: 4s;}
+
+@keyframes thumbActive{
+  0%, 45% { border-color:white; opacity:1; transform:scale(1.1); }
+  50%, 100% { border-color:transparent; opacity:0.6; transform:scale(1); }
+}
+
+@keyframes textUp{
+  from{transform:translateY(20px); opacity:0;}
+  to{transform:translateY(0); opacity:1;}
+}
+
+
+
+
+
+/* aside */
+.sidebar {
+  position:fixed;
+  top:0; left:0;
+  width: 80px; /* First la chinna size da */
+  height: 100vh;
+  background: #101115;
+  padding: 20px 0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  transition: all 0.3s ease; /* Smooth animation da ithu */
+  overflow:hidden;
+  z-index:100;
+  border-right: 1px solid #222;
+}
+
+/* Mouse mela vecha perusa aagum da */
+.sidebar:hover {
+  width: 220px; /* Hover panna perusa aagum */
+  align-items: flex-start;
+  padding-left: 20px;
+  background: linear-gradient(90deg, #101115 60%, rgba(16,17,21,0.9));
+}
+
+.logo {
+  display:flex; align-items:center; gap:10px;
+  color:white; font-weight:bold; margin-bottom:40px;
+  font-size:20px;
+}
+.netlogo{
+    height:37px;
+    display:inline;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.logo-text {
+  opacity:0; white-space:nowrap; transition:0.3s;
+}
+.sidebar:hover .logo-text { opacity:1; }
+
+.menu { display:flex; flex-direction:column; width:100%; gap:5px; }
+.menu a {
+  display:flex; align-items:center; gap:20px;
+  color:#aaa; text-decoration:none;
+  padding:14px 10px;
+  border-radius:8px;
+  transition:0.2s;
+  white-space:nowrap;
+}
+.menu a i { font-size:20px; min-width:30px; text-align:center;color: red; }
+.menu a span {
+  opacity:0; /* First la text theriyathu da */
+  transition:0.3s;
+}
+.sidebar:hover a span { opacity:1; } /* Hover panna text varum da */
+
+.menu a:hover, .menu a.active {
+  color:white;
+  background: rgba(255,255,255,0.1);
+}
+.menu a.active i { color:white; }
+
+.menu .bottom { margin-top: 40px; }
+
+.main {
+  margin-left: 80px;
+  padding: 50px;
+  color:white;
+  transition:0.3s;
+}
+.sidebar:hover ~ .main {
+  margin-left: 220px; /* Sidebar virinja content thalli pogum da */
+}
+
+
+/* main section */
+*{margin:0; padding:0; box-sizing:border-box;}
+body{background:#0e0f15; color:white; font-family:Arial; overflow-x:hidden;}
+
+.app{display:flex;}
+.sidebar{
+  width:70px; height:100vh; position:fixed; left:0; top:0;
+  background:#0e0f15; display:flex; flex-direction:column;
+  align-items:center; gap:25px; padding-top:15px; z-index:100;
+  border-right:1px solid #1a1a1a;
+}
+.sidebar i{color:#aaa; font-size:18px; cursor:pointer;}
+.sidebar.active i,.sidebar i:hover{color:white;}
+.sidebar.logo{color:white; font-size:28px; margin-bottom:10px;}
+.sidebar.bottom{margin-top:auto; margin-bottom:30px;}
+
+.main{margin-left:70px; width:calc(100% - 70px); padding:15px 20px 0 30px;}
+
+.row{margin-bottom:25px;margin-left: 60px;}
+.row-header{display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;}
+.row-header h3{font-size:18px;}
+.row-header span{color:#aaa; font-size:13px; cursor:pointer;}
+.row h3{margin-bottom:12px; font-size:18px;}
+
+.cards{display:flex; gap:10px; overflow:visible;}
+
+.card{
+  position:relative;
+  min-width:220px; height:125px; flex-shrink:0;
+  border-radius:6px; overflow:hidden; cursor:pointer;
+  background:#1a1a1a;
+}
+.card.small{min-width:230px; height:250px; overflow:visible; background:transparent;}
+.card.small img{width:100%; height:135px; object-fit:cover; border-radius:6px;}
+.card.small p{font-size:13px; margin-top:8px; line-height:1.3; color:#ddd;}
+
+.card img{width:100%; height:100%; object-fit:cover;}
+.tag{position:absolute; bottom:8px; left:8px; font-weight:900; font-size:18px; text-shadow:0 2px 10px black;}
+
+/* PERUSA VARA HOVER PREVIEW DA - MAIN MAGIC */
+.preview{
+  position:absolute;
+  top:50%; left:50%;
+  width:340px;
+  background:#1a1d29;
+  border-radius:8px;
+  overflow:hidden;
+  transform:translate(-50%, -50%) scale(0);
+  opacity:0;
+  transition: all 0.3s ease;
+  z-index:50;
+  box-shadow:0 15px 40px rgba(0,0,0,0.9);
+  pointer-events:none;
+}
+.hover-active:hover.preview{
+  transform:translate(-50%, -60%) scale(1);
+  opacity:1;
+  pointer-events:auto;
+}
+.preview-img{position:relative; height:190px;}
+.preview-img img{width:100%; height:100%; object-fit:cover;}
+.preview-img.live{position:absolute; top:10px; right:10px; background:#ffcc00; color:black; font-size:11px; padding:3px 6px; border-radius:3px; font-weight:bold;}
+.play-btn{position:absolute; bottom:10px; left:10px; background:rgba(0,0,0,0.6); width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; font-size:12px;}
+.preview-info{padding:12px;}
+.preview-info h4{font-size:14px; margin-bottom:6px;}
+.preview-info p{font-size:12px; color:#aaa; line-height:1.4;}
+
+
+
+/* 4row */
+.cards{display:flex; gap:10px; overflow:visible;}
+
+.card{
+  position:relative;
+  min-width:220px; height:125px; flex-shrink:0;
+  border-radius:6px; overflow:hidden; cursor:pointer;
+  background:#1a1a1a;
+}
+.card.small{min-width:230px; overflow:visible; background:transparent;}
+.card.small img{width:100%; height:100%; object-fit:cover; border-radius:6px;}
+.card.small p{font-size:13px; margin-top:8px; line-height:1.3; color:#ddd;}
+
+.card img{width:100%; height:100%; object-fit:cover;}
+.tag{position:absolute; bottom:8px; left:8px; font-weight:900; font-size:18px; text-shadow:0 2px 10px black;}
+
+/* FOOTER */
+.footer{
+  background:#0e0f15;
+  padding:50px 40px 30px 120px; /* Left la sidebar ku edam vituden da */
+  border-top:1px solid #1e1e1e;
+  color:#a0a0a0;
+}
+
+.footer-top{
+  display:grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1.2fr;
+  gap:40px;
+}
+
+.col h4{
+  color:#e5e5e5;
+  font-size:15px;
+  font-weight:600;
+  margin-bottom:18px;
+}
+
+.col a{
+  display:block;
+  color:#8f98b2;
+  text-decoration:none;
+  font-size:14px;
+  margin-bottom:10px;
+  transition:0.2s;
+}
+.col a:hover{color:white;}
+
+.lang i{font-size:12px; margin-right:6px;}
+
+.copy{
+  margin-top:60px;
+}
+.copy p{
+  font-size:12px;
+  color:#6a7282;
+  margin-bottom:8px;
+}
+.links{
+  display:flex;
+  gap:12px;
+}
+.links a{
+  display:inline;
+  font-size:12px;
+  color:#6a7282;
+}
+
+/* Right Side da */
+.right{text-align:left;}
+.social{
+  display:flex;
+  gap:18px;
+  margin-bottom:28px;
+}
+.social a{
+  font-size:20px;
+  color:#e5e5e5;
+}
+.social a:hover{color:white; transform:scale(1.1);}
+
+.stores{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+.stores img{
+  height:40px;
+  background:#111;
+  border-radius:6px;
+  padding:2px;
+}
+
+/* ============================= */
+/* MEDIA QUERY - RESPONSIVE DA */
+/* ============================= */
+
+/* TABLET DA - 1024px ku keela */
+@media(max-width: 1024px){
+  .hero-slider{height:70vh; margin-left:80px;}
+  .content h1{font-size:40px;}
+  .cards .card{min-width:180px; height:100px;}
+  .card.small{min-width:180px;}
+  .card.small img{height:110px;}
+  .footer-top{grid-template-columns: 1fr 1fr; gap:30px;}
+}
+
+/* MOBILE DA - MAIN MAGIC ITHU THAAN */
+@media(max-width: 768px){
+  
+  /* ASIDE AH BOTTOM KU KONDU VAREN DA - Netflix maari */
+  .sidebar{
+    top:auto; bottom:0;
+    width:100%; height:60px;
+    flex-direction:row;
+    justify-content:space-around;
+    padding:0;
+    border-right:none;
+    border-top:1px solid #222;
+    background:#0e0f15;
+  }
+  .sidebar:hover{width:100%; padding-left:0; align-items:center;}
+  .sidebar .logo{display:none;}
+  .sidebar .menu{flex-direction:row; justify-content:space-around; width:100%;}
+  .sidebar .menu a{flex-direction:column; gap:4px; padding:8px;}
+  .sidebar .menu a span{opacity:1; font-size:10px;}
+  .sidebar .menu .bottom{margin-top:0;}
+  
+  /* MAIN CONTENT FULL WIDTH DA */
+  .main{margin-left:0 !important; padding:10px 10px 80px 10px; width:100%;}
+  .row{margin-left:0; margin-bottom:18px;}
+  
+  /* HERO SLIDER MOBILE LA FULL WIDTH */
+  .hero-slider{
+    margin-left:0;
+    height:55vh;
+    padding-left:0;
+  }
+  .slide{padding-left:20px; align-items:flex-end; padding-bottom:60px;}
+  .content h1{font-size:28px;}
+  .content .desc{font-size:13px; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;}
+  .watch{padding:10px 20px; font-size:14px;}
+  
+  /* CARDS MOBILE LA CHINNA SIZE */
+  .cards{gap:8px; overflow-x:auto; scrollbar-width:none;}
+  .cards::-webkit-scrollbar{display:none;}
+  .cards .card{min-width:140px; height:80px;}
+  .card.small{min-width:135px;}
+  .card.small img{height:85px;}
+  
+  /* HOVER PREVIEW MOBILE LA VENDAAM DA */
+  .preview{display:none !important;}
+  
+  /* FOOTER MOBILE LA */
+  .footer{padding:20px 15px 90px 15px;}
+  .footer-top{grid-template-columns:1fr 1fr; gap:20px;}
+  .col h4{font-size:13px;}
+  .col a{font-size:12px;}
+}
+
+/* CHINNA MOBILE - 480px */
+@media(max-width: 480px){
+  .hero-slider{height:50vh;}
+  .content h1{font-size:22px;}
+  .row h3{font-size:15px;}
+  .cards .card{min-width:120px; height:70px;}
+  .card.small{min-width:115px;}
+  .card.small img{height:75px;}
+  .footer-top{grid-template-columns:1fr;}
+  .right .stores{flex-direction:column; align-items:flex-start;}
+}

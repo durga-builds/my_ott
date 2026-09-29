@@ -1,0 +1,558 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.container{
+    height: fit-content;
+    width: 100%;
+    
+}
+.topnavbar{
+    height: 60px;
+    width: 100%;
+    
+    
+  
+}
+.netlogo{
+    height:37px;
+    display:inline;
+    margin-top: 30px;
+    margin-left: 155px;
+}
+.lang{
+    color: white;
+    margin-bottom:100px;
+    text-align: right;
+    margin-right: 170px;
+    
+  
+}  
+.lang select {
+    
+   margin-right: 30px;
+    border-radius: 3px;  
+  padding: 6px 17px;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+}
+
+.but{ 
+  display: inline-block; 
+  width: 70px;  
+  height: 32px;
+  line-height: 32px; /* text center varum */
+  text-align: center;
+  background-color: #e50914;
+  border-radius: 3px;
+  color: white;
+  text-decoration: none;
+}
+
+/* body {
+  background: url('./netflix_img/overall_img.jpg');
+  background-size: cover;
+} */
+     /* linearGradient use pannathu */
+ header {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), 
+              url('./netflix_img/overall_img.jpg'); /* naan kudutha image ah bg.jpg nu save pannu */
+  background-size: cover;
+} 
+
+.center-content{
+    text-align: center;
+    margin-top: 180px;
+    margin-left: 0px;
+    color: white;
+    
+}
+.center-content h1{
+    font-size: 55px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 100px;
+     line-height: 1.3;
+}
+.p1{
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left:100px;
+   
+}
+.p2{
+    font-family: Arial, Helvetica, sans-serif;
+   font-size: 18px;
+   margin-left:100px;
+}
+.e-mail-box{
+    margin-top: 15px;
+    background: transparent;
+    margin-left: 100px;
+   
+    
+}
+.e-mail-box input{
+    height:53px;
+    width:28%;
+    background-color: #00000080;
+    border-radius: 5px;
+    border:1px solid white;
+    color: white;
+    margin-left: 100px;
+}
+.e-mail-box button{
+    height:53px;
+    width:15%;
+    
+    color:white;
+    font-size: 20px;
+    
+    border-radius: 5px;
+    background-color: #e50914;
+    border:1px solid #e50914;
+}
+.e-mail-box a{
+    text-decoration: none;
+    color: white;
+}
+.curve{
+    height: 80px;
+    
+  background: black;
+  border-top: 4px solid #e50914;
+  border-top-left-radius: 50% 100%;
+  border-top-right-radius: 50% 100%;
+  margin-top: -40px;
+  position: relative;
+  z-index: 2;
+  background: radial-gradient(ellipse at center top, #1a1a3a 0%, #000 60%);
+
+}
+.treanding h2{
+    color:white;
+    margin-left: 150px;
+    margin-top: 50px;
+    font-size: 28px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+  /* movie scroll */
+.movie-row{
+    display:flex;
+    gap: 25px;
+    overflow-x: auto;
+    padding: 35px 145px;
+}
+ .movie-card img {        /*image fit */
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  object-position: center;
+   border-radius: 8px; 
+}
+
+.movie-card{    
+  margin-left: 35px;       /*control height & width */
+  border-radius: 8px; 
+  position: relative;
+  min-width: 180px;
+  height: 250px;
+  cursor: pointer;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s;
+  padding: 2px;
+}
+
+.movie-row::-webkit-scrollbar {
+  display: none;
+}
+.movie-card:hover{
+    transform :scale(1.09);
+}
+
+
+ /* SPAN TAG */
+.number{
+   position: absolute;
+  left: -7px;
+  font-size: 5rem;
+  bottom: -10px;
+  top:150px;
+  font-weight: 700; 
+  font-family: 'Arial Black', sans-serif;
+  color: black; 
+  -webkit-text-stroke: 3px white; /* velila white border - ITHU THAAN  KEY! */
+  z-index: 2;
+  line-height: 1;
+  
+  text-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.5);
+}
+
+/* MORRE REASON FOR JOINING */
+
+
+    /* Heading ku */
+.mt {
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: Arial, sans-serif;
+  margin: 40px 0 20px 20px;
+  
+}
+
+.reason-row {
+  display: flex;
+  gap: 16px;
+  padding: 0 20px 40px 180px;
+  background: black;
+  flex-wrap: wrap;    /* mobile la keela varum */
+}
+
+.reason-box {
+  flex: 1;
+  min-width: 220px; /* mobile ku */
+  min-height: 280px;
+  background: linear-gradient(149deg, #192247 0%, #210e17 96.86%);
+  /* NETFLIX ORIGINAL GRADIENT DA ITHU */
+  border-radius: 16px;
+  padding: 22px;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.reason-box h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  line-height: 1.3;
+  max-width: 90%;
+}
+
+.reason-box p {
+  font-size: 15px;
+  color: #9a9aa3;
+  line-height: 1.4;
+  margin: 0;
+  max-width: 85%;
+}
+
+/* ICONS AUTOMATIC AH VARUM - HTML THODA VENAAM DA */
+.reason-box::after {
+  content: "";
+  position: absolute;
+  right: 15px;
+  bottom: 10px;
+  width: 75px;
+  height: 75px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+}
+
+/* 4 BOX KU 4 ICON */
+.reason-box:nth-child(1)::after {
+  content: "📺";
+  font-size: 65px;
+  background: none;
+}
+
+.reason-box:nth-child(2)::after {
+  content: "⭳";
+  font-size: 60px;
+  background: radial-gradient(circle, #ff0f6a 0%, #a000ff 100%);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 60px;
+}
+
+.reason-box:nth-child(3)::after {
+  content: "🔭";
+  font-size: 60px;
+}
+
+.reason-box:nth-child(4)::after {
+  content: "😊";
+  font-size: 55px;
+  background: radial-gradient(circle, #ff3a8a 20%, #7a2cff 80%);
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  text-align: center;
+  line-height: 65px;
+}
+  
+
+/* MEMBER */
+.member p{
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+.e-mail-box{
+    margin-top: 15px;
+    background: transparent;
+    margin-left: 20px;
+    
+}
+.e-mail-box input{
+    height:53px;
+    width:28%;
+    background-color: #00000080;
+    border-radius: 5px;
+    border:1px solid white;
+    color: white;
+}
+.e-mail-box button{
+    height:53px;
+    width:15%;
+    color:white;
+    font-size: 20px;
+   
+    border-radius: 5px;
+    background-color: #e50914;
+    border:1px solid #e50914;
+}
+
+
+/* FOTTER */
+.footer {
+  background: black;
+  color: #a8a8a8;
+  padding: 60px 120px 40px 120px;
+  font-family: Arial, sans-serif;
+}
+
+.call {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.call a {
+  color: #a8a8a8;
+  text-decoration: underline;
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer-col a {
+  color: #a8a8a8;
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+.footer-col a:hover {
+  color: white;
+}
+
+.lang-box {
+  margin-top: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #5a5a5a;
+  border-radius: 4px;
+  padding: 6px 12px;
+  background: #0f0f0f;
+}
+
+.lang-box select {
+  background: transparent;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.country {
+  margin-top: 30px;
+  font-size: 14px;
+}
+
+.captcha {
+  margin-top: 25px;
+  font-size: 12px;
+  color: #6b6b6b;
+}
+
+    
+
+/* ================= MOBILE RESPONSIVE DA ================= */
+
+/* TAB KU - 1024px */
+@media (max-width: 1024px) {
+  .netlogo{
+    margin-left: 40px;
+  }
+  .lang{
+    margin-right: 40px;
+  }
+  .treanding h2{
+    margin-left: 40px;
+  }
+  .movie-row{
+    padding: 35px 40px;
+  }
+  .reason-row{
+    padding: 0 40px 40px 40px;
+  }
+  .footer{
+    padding: 60px 40px 40px 40px;
+  }
+}
+
+/* MOBILE KU - 768px - ITHU THAAN MAIN DA */
+@media (max-width: 768px) {
+  
+  /* 1. NAVBAR FIX DA */
+  .topnavbar{
+    height: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .netlogo{
+    height: 25px;
+    margin: 0 !important; /* antha 155px ah adichitom da */
+  }
+  .lang{
+    margin: 0 !important; /* 170px ah adichitom */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .lang select{
+    margin-right: 0;
+    padding: 5px 8px;
+  }
+  .but{
+    width: 60px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 13px;
+  }
+
+  /* 2. CENTER CONTENT */
+  .center-content{
+    margin-top: 80px;
+    margin-left: 0;
+    padding: 0 20px;
+  }
+  .center-content h1{
+    font-size: 32px !important;
+    margin-left: 0 !important;
+    line-height: 1.2;
+  }
+  .p1, .p2{
+    margin-left: 0 !important;
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  /* 3. EMAIL BOX - SIDE BY SIDE AH IRUKKATHU, KEELA VARUM */
+  .e-mail-box{
+    margin-left: 0 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 0 20px;
+  }
+  .e-mail-box input{
+    width: 100% !important;
+    margin-left: 0 !important;
+    max-width: 350px;
+  }
+  .e-mail-box button{
+    width: 100% !important;
+    max-width: 180px;
+    height: 50px;
+    font-size: 18px;
+  }
+
+  /* 4. MOVIE ROW */
+  .treanding h2{
+    margin-left: 20px;
+    font-size: 22px;
+  }
+  .movie-row{
+    padding: 20px;
+    gap: 15px;
+  }
+  .movie-card{
+    min-width: 140px;
+    height: 200px;
+    margin-left: 0;
+  }
+  .number{
+    font-size: 3.5rem;
+    top: 120px;
+  }
+
+  /* 5. REASON BOX - 1x1 AH VARUM */
+  .mt{
+    margin-left: 20px !important;
+  }
+  .reason-row{
+    flex-direction: column;
+    padding: 0 20px 30px 20px !important;
+  }
+  .reason-box{
+    min-width: 100%;
+    min-height: 180px;
+  }
+
+  /* 6. MEMBER */
+  .member p{
+    padding: 0 20px;
+    font-size: 16px;
+  }
+
+  /* 7. FOOTER */
+  .footer{
+    padding: 30px 20px !important;
+  }
+  .footer-row{
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2x2 grid */
+    gap: 25px;
+  }
+}
+
+/* CHINNA MOBILE KU - 480px */
+@media (max-width: 480px) {
+  .center-content h1{
+    font-size: 28px !important;
+  }
+  .log img{
+    width: 90px;
+  }
+}

@@ -1,0 +1,69 @@
+body{background:#0e1015; color:white; font-family:Arial;}
+.app{display:flex;}
+
+/* SIDEBAR da */
+.sidebar{
+  width:70px; height:100vh; position:fixed; left:0; top:0;
+  background:#0e1015; display:flex; flex-direction:column;
+  align-items:center; gap:28px; padding-top:20px; z-index:100;
+}
+.sidebar i{color:#888; font-size:17px;}
+.sidebar a.active i{color:white;}
+.bottom{margin-top:auto; margin-bottom:30px;}
+
+/* MAIN da */
+.main{margin-left:70px; width:calc(100% - 70px); padding:20px 20px 20px 40px;}
+.main h3{font-size:17px; margin:25px 0 14px; color:#e5e5e5;}
+
+.row-header{display:flex; justify-content:space-between; align-items:center; margin-top:25px;}
+.row-header span{font-size:13px; color:#8f98b2; cursor:pointer;}
+.row-header h3{margin:0;}
+
+/* Popular Channels Row da - Un screenshot maariye */
+.channel-row{
+  display:grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap:12px;
+}
+.channel{
+  height:95px;
+  background: #1a1015;
+  background: linear-gradient(180deg, #261a0f, #1a1111);
+  border-radius:8px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  transition:0.3s;
+  border:1px solid #222;
+}
+.channel.dark{background:#2a213f;}
+.channel img{height:45px; object-fit:contain;}
+.channel p{font-size:12px; margin-top:6px; font-weight:bold; color:#ffcc00;}
+.channel:hover{transform:scale(1.04); border-color:#444;}
+
+/* Kids & Documentary Row da */
+.show-row{
+  display:flex;
+  gap:12px;
+  overflow-x:auto;
+  scrollbar-width:none;
+  padding-bottom:10px;
+}
+.show-row::-webkit-scrollbar{display:none;}
+
+.poster{
+  min-width:165px;
+  height:245px;
+  border-radius:6px;
+  overflow:hidden;
+  flex-shrink:0;
+  cursor:pointer;
+  position:relative;
+  background:#1a1a1a;
+  transition:0.3s;
+}
+.poster img{width:100%; height:100%; object-fit:cover;}
+.poster:hover{transform:scale(1.05); z-index:2;}
+.poster p.title{position:absolute; bottom:8px; left:8px; font-weight:bold; font-size:14px; text-shadow:0 2px 8px black;}
