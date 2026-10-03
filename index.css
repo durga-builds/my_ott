@@ -69,7 +69,7 @@
  header {
   height: 100vh;
   background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), 
-              url('./netflix_img/overall_img.jpg'); /* naan kudutha image ah bg.jpg nu save pannu */
+              url('./image/overall_img.jpg'); 
   background-size: cover;
 } 
 
@@ -451,10 +451,10 @@
   }
   .netlogo{
     height: 25px;
-    margin: 0 !important; /* antha 155px ah adichitom da */
+    margin: 0 !important;
   }
   .lang{
-    margin: 0 !important; /* 170px ah adichitom */
+    margin: 0 !important; 
     display: flex;
     align-items: center;
     gap: 10px;
